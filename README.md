@@ -12,7 +12,7 @@ require 'vendor/autoload.php';
 
 use Sinemalar\Sinemalar_class;
 
-"https://www.sinemalar.com/film/638/esaretin-bedeli" url adresindeki alınması gereken yer.
+// "https://www.sinemalar.com/film/638/esaretin-bedeli" url adresindeki alınması gereken yer.
 $veri = new Sinemalar_class("638/esaretin-bedeli");
 
 echo $veri->get_filmAd();
