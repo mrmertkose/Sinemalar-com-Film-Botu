@@ -1,0 +1,14 @@
+{
+    "name": "mertkose/sinemalar-com",
+    "description": "Sinemalar.com Film Bilgilerini ceken Bot",
+    "type": "library",
+    "require": {
+        "imangazaliev/didom": "^1.14"
+    },
+     "autoload":{
+        "psr-4":{
+            "Sinemalar\\":"src"
+        }
+    },
+    "license": "MIT"
+}
