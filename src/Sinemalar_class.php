@@ -34,7 +34,7 @@ class Sinemalar_class
         $sonuc = "Veri Yok";
         foreach ($this->document->find("div[class=col] > div[class=info-group]") as $item) {
             foreach ($item->find("span[class=label-title]") as $item2) {
-                if ($item2->text() == "Orijinal İsmi") {
+                if ($item2->text() == "Orijinal İsmi:") {
                     $sonuc = $item->first("span[class=label]")->text();
                 }
             }
@@ -47,7 +47,7 @@ class Sinemalar_class
         $sonuc = "Veri Yok";
         foreach ($this->document->find("div[class=col] > div[class=info-group]") as $item) {
             foreach ($item->find("span[class=label-title]") as $item2) {
-                if ($item2->text() == "Vizyon Tarihi") {
+                if ($item2->text() == "Vizyon Tarihi:") {
                     $sonuc = trim($item->first("span[class=label]")->text());
                 }
             }
@@ -60,7 +60,7 @@ class Sinemalar_class
         $sonuc = "Veri Yok";
         foreach ($this->document->find("div[class=col] > div[class=info-group]") as $item) {
             foreach ($item->find("span[class=label-title]") as $item2) {
-                if ($item2->text() == "Tür") {
+                if ($item2->text() == "Tür:") {
                     $sonuc = trim($item->first("span[class=label]")->text());
                 }
             }
@@ -86,7 +86,7 @@ class Sinemalar_class
         $sonuc = "Veri Yok";
         foreach ($this->document->find("div[class=col] > div[class=info-group]") as $item) {
             foreach ($item->find("span[class=label-title]") as $item2) {
-                if ($item2->text() == "Yapımı") {
+                if ($item2->text() == "Yapımı:") {
                     $sonuc = trim($item->first("span[class=label]")->text());
                 }
             }
@@ -111,7 +111,15 @@ class Sinemalar_class
 
     public function get_yonetmen()
     {
-        return trim($this->document->first("span[itemprop=director] > a[itemprop=url] > span[itemprop=name]"));
+        $sonuc = "Veri Yok";
+        foreach ($this->document->find("div[class=col] > div[class=info-group]") as $item) {
+            foreach ($item->find("span[class=label-title]") as $item2) {
+                if ($item2->text() == "Yönetmen:") {
+                    $sonuc = trim($item->first("span[class=label]")->text());
+                }
+            }
+        }
+        return $sonuc;    
     }
 
 
